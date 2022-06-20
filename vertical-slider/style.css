@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.left-slide {
+  height: 100%;
+  width: 35%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.left-slide-text h2 {
+  font-size: 40px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding-top: 100px;
+}
+
+.left-slide-text {
+  height: 100%;
+  width: 100%;
+  color: #ffffff;
+  animation: 0.5s ease-in-out;
+  position: relative;
+  display: none;
+}
+
+p {
+  padding: 10px;
+}
+
+.right-slide {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 35%;
+  width: 65%;
+}
+
+.right-slide-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+  animation: 0.5s ease-in-out;
+  position: relative;
+  display: none;
+}
+
+.active,
+.next {
+  display: block;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+button {
+  background-color: #ffffff;
+  border: none;
+  color: #aaaaaa;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px;
+}
+
+button:hover {
+  color: #222;
+}
+
+button:focus {
+  outline: none;
+}
+
+.container .action-button button {
+  position: absolute;
+  left: 35%;
+  top: 50%;
+  z-index: 100;
+}
+
+.container .action-button .down-button {
+  transform: translateX(-100%);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.container .action-button .up-button {
+  transform: translateY(-100%);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.left-button {
+  transform: translateX(-100%) translateY(-100%);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.right-button {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.to-top {
+  animation-name: top;
+}
+
+.from-bottom {
+  animation-name: bottom;
+}
+
+.to-bottom {
+  animation-name: bottom;
+  animation-direction: reverse;
+}
+
+.from-top {
+  animation-name: top;
+  animation-direction: reverse;
+}
+
+@keyframes top {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100%;
+  }
+}
+
+@keyframes bottom {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
